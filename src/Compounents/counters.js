@@ -1,13 +1,17 @@
-import React from 'react'
-import Counter from './counter';
+import React from "react";
+import Counter from "./counter";
 
-class Counters  extends React.Component {
-    state = {vinoiserie :[{name:"croissant", value:4},{name:"Chocolatine", value:0},{name:"Tarte aux amandes", value:0}]}
-
-    render() { 
-        return(this.state.vinoiserie.map(v => <Counter key={this.state.vinoiserie.indexOf(v)} value={v.value} selected={true}>{v.name}</Counter>)) ;
-       
-    }
+class Counters extends React.Component {
+  render() {
+    return this.props.counters.map((c) => (
+      <Counter
+        key={c.id}
+        counter={c}
+        onIncrement={this.props.onIncrement}
+        onDelete={this.props.onDelete}
+      />
+    ));
+  }
 }
- 
+
 export default Counters;
