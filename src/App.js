@@ -1,11 +1,11 @@
-import './App.css';
-import Counters from './Compounents/counters';
+import "./App.css";
+import Counters from "./Compounents/counters";
 
 function App() {
   return (
-    <div className="App">
-      <Counters/>
-    </div>
+    <main className="container">
+      <Counters />
+    </main>
   );
 }
 
